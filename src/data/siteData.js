@@ -227,7 +227,12 @@ export const faqItems = [
   {
     question: 'Combien coute une broderie ?',
     answer:
-      "Le tarif depend de la complexite du motif, du nombre de points et du support textile. Un prenom simple commence a partir de quelques euros. Contactez-nous pour un devis personnalise et sans engagement.",
+      "Les tarifs varient selon la complexite du motif, le nombre de points et le support textile. A titre indicatif, un prenom simple demarre autour de 3 a 5 €, une broderie elaboree (logo, motif multicolore) peut aller de 10 a 30 €, et les commandes en serie beneficient de tarifs degressifs. Contactez-nous pour un devis personnalise et sans engagement.",
+  },
+  {
+    question: 'Combien coute une sublimation ?',
+    answer:
+      "Le prix d'une sublimation depend de la surface a imprimer et de la quantite. Pour un article simple (mug, badge tissu, ecusson), comptez entre 5 et 15 €. Pour des supports plus grands ou des series, les tarifs sont etablis sur devis. N'hesitez pas a nous contacter pour une estimation rapide.",
   },
   {
     question: 'Quels textiles peuvent etre brodes ?',
@@ -237,7 +242,7 @@ export const faqItems = [
   {
     question: 'Quel est le delai de realisation ?',
     answer:
-      "En general, comptez entre 3 et 7 jours ouvrables pour une commande standard. Pour des commandes en quantite ou des projets complexes, le delai peut varier. Nous faisons notre possible pour nous adapter a vos urgences.",
+      "Pour une commande simple (prenom, initiales), la realisation peut etre effectuee en 24 a 48 h. Pour une commande standard, comptez generalement 2 a 5 jours ouvrables. Les commandes en grande quantite ou les projets complexes peuvent necessiter un delai plus long, etabli ensemble a la prise de commande. Nous faisons notre maximum pour nous adapter a vos urgences — n'hesitez pas a nous le signaler !",
   },
   {
     question: 'Peut-on broder un prenom ou un texte personnalise ?',
