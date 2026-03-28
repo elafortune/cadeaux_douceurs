@@ -9,7 +9,7 @@ function FaqItem({ item, isOpen, onToggle, delay }) {
   return (
     <div
       ref={ref}
-      className={`reveal reveal-delay-${delay} border rounded-2xl overflow-hidden transition-all duration-300 ${
+      className={`reveal reveal-delay-${delay} border rounded-2xl overflow-hidden transition-[box-shadow,border-color] duration-300 ${
         isOpen
           ? 'border-sky-light shadow-md bg-white'
           : 'border-sky-xlight/60 bg-white shadow-sm'
@@ -38,7 +38,7 @@ function FaqItem({ item, isOpen, onToggle, delay }) {
 
       <div
         className={`overflow-hidden transition-all duration-500 ${
-          isOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
+          isOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
         <p className="font-sans text-sm text-slate leading-relaxed px-6 pt-3 pb-6 border-t border-sky-xlight/50">
