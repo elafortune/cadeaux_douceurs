@@ -2,41 +2,11 @@ import { useMemo } from 'react'
 import { Heart, Sparkles, Scissors, UserCheck } from 'lucide-react'
 import useScrollReveal from '../../hooks/useScrollReveal'
 import SectionHeading from '../ui/SectionHeading'
-import { presentationItems } from '../../data/siteData'
-
-const ALL_PHOTOS = [
-  '/photo/broderie/FB_IMG_1644955288066.jpg',
-  '/photo/broderie/FB_IMG_1644955297491.jpg',
-  '/photo/broderie/FB_IMG_1644955316799.jpg',
-  '/photo/broderie/FB_IMG_1644955334020.jpg',
-  '/photo/broderie/FB_IMG_1644955347457.jpg',
-  '/photo/broderie/FB_IMG_1644956201150.jpg',
-  '/photo/broderie/FB_IMG_1644956218803.jpg',
-  '/photo/broderie/FB_IMG_1644956460429.jpg',
-  '/photo/broderie/FB_IMG_1644956501790.jpg',
-  '/photo/broderie/FB_IMG_1644956565476.jpg',
-  '/photo/broderie/FB_IMG_1644956735265.jpg',
-  '/photo/broderie/FB_IMG_1644956778354.jpg',
-  '/photo/broderie/FB_IMG_1644956882097.jpg',
-  '/photo/broderie/FB_IMG_1644956907088.jpg',
-  '/photo/broderie/FB_IMG_1644956924523.jpg',
-  '/photo/broderie/FB_IMG_1644956932272.jpg',
-  '/photo/broderie/FB_IMG_1644956947643.jpg',
-  '/photo/broderie/FB_IMG_1644956965273.jpg',
-  '/photo/broderie/FB_IMG_1644957136394.jpg',
-  '/photo/broderie/FB_IMG_1651703329987.jpg',
-  '/photo/broderie/FB_IMG_1651703346659.jpg',
-  '/photo/broderie/IMG_20231004_135611.jpg',
-  '/photo/broderie/IMG_20231004_135631.jpg',
-  '/photo/broderie/IMG_20231004_135644.jpg',
-  '/photo/broderie/IMG_20231004_135700.jpg',
-  '/photo/broderie/IMG_20231004_135827.jpg',
-  '/photo/broderie/IMG_20231001_170744.jpg',
-]
+import { presentationItems, photos as allPhotos } from '../../data/siteData'
 
 function pickRandom(arr, n) {
   const shuffled = [...arr].sort(() => Math.random() - 0.5)
-  return shuffled.slice(0, n)
+  return shuffled.slice(0, n).map((f) => `/photo/broderie/${f}`)
 }
 
 const iconMap = { Heart, Sparkles, Scissors, UserCheck }
@@ -68,7 +38,7 @@ function PresCard({ item, delay }) {
 }
 
 export default function Presentation() {
-  const photos = useMemo(() => pickRandom(ALL_PHOTOS, 5), [])
+  const randomPhotos = useMemo(() => pickRandom(allPhotos, 5), [])
 
   return (
     <section id="presentation" className="py-24 bg-white">
@@ -89,7 +59,7 @@ export default function Presentation() {
 
         {/* Petites photos */}
         <div className="flex flex-wrap justify-center gap-4 mt-12">
-          {photos.map((src, i) => (
+          {randomPhotos.map((src, i) => (
             <div
               key={i}
               className="w-28 h-28 rounded-2xl overflow-hidden border-2 border-sky-xlight shadow-md flex-shrink-0 transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg"
