@@ -1,9 +1,9 @@
-import { Pen, PartyPopper, Building2, Gift, Paintbrush } from 'lucide-react'
+import { Pen, PartyPopper, Building2, Gift, Paintbrush, Layers } from 'lucide-react'
 import useScrollReveal from '../../hooks/useScrollReveal'
 import SectionHeading from '../ui/SectionHeading'
 import { activitesItems } from '../../data/siteData'
 
-const iconMap = { Pen, PartyPopper, Building2, Gift, Paintbrush }
+const iconMap = { Pen, PartyPopper, Building2, Gift, Paintbrush, Layers }
 
 function ActiviteCard({ item, index, delay }) {
   const ref = useScrollReveal()
@@ -12,7 +12,11 @@ function ActiviteCard({ item, index, delay }) {
   return (
     <div
       ref={ref}
-      className={`reveal reveal-delay-${delay} flex gap-5 bg-white rounded-2xl p-6 border border-sky-xlight/60 shadow-sm card-hover group`}
+      className={`reveal reveal-delay-${delay} flex gap-5 rounded-2xl p-6 border shadow-sm card-hover group ${
+        item.featured
+          ? 'bg-gradient-to-br from-sky-xlight to-rose-xlight border-sky-light/60'
+          : 'bg-white border-sky-xlight/60'
+      }`}
     >
       {/* Numero */}
       <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-sky to-rose flex items-center justify-center shadow-md transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
@@ -53,11 +57,11 @@ export default function Activites() {
         {/* Petites photos */}
         <div className="flex flex-wrap justify-center gap-4 mt-12">
           {[
-            '/photos_cadeaux_douceurs/IMG_20231004_135611.jpg',
-            '/photos_cadeaux_douceurs/IMG_20231004_135631.jpg',
-            '/photos_cadeaux_douceurs/IMG_20231004_135644.jpg',
-            '/photos_cadeaux_douceurs/IMG_20231004_135700.jpg',
-            '/photos_cadeaux_douceurs/IMG_20231004_135827.jpg',
+            '/photo/broderie/IMG_20231004_135611.jpg',
+            '/photo/broderie/IMG_20231004_135631.jpg',
+            '/photo/broderie/IMG_20231004_135644.jpg',
+            '/photo/broderie/IMG_20231004_135700.jpg',
+            '/photo/broderie/IMG_20231004_135827.jpg',
           ].map((src, i) => (
             <div
               key={i}

@@ -81,22 +81,37 @@ export default function Hero() {
 
         {/* Sous-titre broderie */}
         <h2
-          className="font-serif text-2xl md:text-3xl text-white/90 leading-tight mb-6 animate-fade-in-up"
+          className="font-serif text-2xl md:text-3xl text-white/90 leading-tight mb-5 animate-fade-in-up"
           style={{ animationDelay: '0.55s', textShadow: '0 2px 20px rgba(0,0,0,0.15)' }}
         >
-          La broderie artisanale{' '}
-          <span className="italic text-white/75">a votre image</span>
+          Broderie &amp; sublimation{' '}
+          <span className="italic text-white/75">sur tout support tissu</span>
         </h2>
 
         {/* Sous-titre */}
         <p
-          className="font-sans text-base md:text-lg text-white/85 leading-relaxed mb-10 max-w-xl mx-auto animate-fade-in-up"
+          className="font-sans text-base md:text-lg text-white/85 leading-relaxed mb-6 max-w-xl mx-auto animate-fade-in-up"
           style={{ animationDelay: '0.6s' }}
         >
-          Creations uniques realisees avec passion et savoir-faire.
+          Creations personnalisees uniques — prenoms, logos, motifs —
           <br className="hidden md:block" />
-          Pour vos cadeaux, evenements et projets d'entreprise.
+          pour particuliers, evenements et entreprises.
         </p>
+
+        {/* Badges services */}
+        <div
+          className="flex flex-wrap justify-center gap-2 mb-8 animate-fade-in-up"
+          style={{ animationDelay: '0.68s' }}
+        >
+          {['🧵 Broderie', '🖨️ Sublimation', '🎁 Cadeaux sur-mesure', '🏢 Entreprises'].map((badge) => (
+            <span
+              key={badge}
+              className="font-sans text-xs px-3 py-1 rounded-full bg-white/15 border border-white/25 text-white/90 backdrop-blur-sm"
+            >
+              {badge}
+            </span>
+          ))}
+        </div>
 
         {/* Boutons */}
         <div

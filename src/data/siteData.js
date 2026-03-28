@@ -30,18 +30,45 @@ export const presentationItems = [
   },
 ]
 
-// ─── Supports textiles ────────────────────────────────────────────────────────
-export const supportsItems = [
+// ─── Textiles avec tailles (serviettes + peignoirs) ──────────────────────────
+export const featuredTextiles = [
   {
     emoji: '🛁',
-    title: 'Serviettes',
-    desc: 'Serviettes de bain, de plage, de table... personnalisees a votre image.',
+    title: 'Serviettes & draps de bain',
+    desc: 'De la serviette invitee au grand drap de bain — tous brodables a votre image.',
+    sizes: [
+      { label: '30×50 cm',   name: 'Serviette invitee' },
+      { label: '50×100 cm',  name: 'Serviette de toilette' },
+      { label: '70×140 cm',  name: 'Drap de douche' },
+      { label: '100×150 cm', name: 'Drap de bain' },
+    ],
   },
   {
-    emoji: '🩱',
-    title: 'Peignoirs',
-    desc: 'Peignoirs de bain luxueux brodes de votre prenom ou initiales.',
+    emoji: '🧖',
+    title: 'Peignoirs adultes',
+    desc: 'Peignoirs de bain luxueux brodes de votre prenom, initiales ou logo.',
+    sizes: [
+      { label: 'S' },
+      { label: 'M' },
+      { label: 'L' },
+      { label: 'XL' },
+      { label: 'XXL' },
+    ],
   },
+  {
+    emoji: '🧒',
+    title: 'Peignoirs enfants',
+    desc: 'Des peignoirs doux et personnalises pour les tout-petits jusqu\'aux ados.',
+    sizes: [
+      { label: '2 ans' },
+      { label: '4 ans' },
+      { label: '8 — 14 ans' },
+    ],
+  },
+]
+
+// ─── Autres supports textiles ─────────────────────────────────────────────────
+export const supportsItems = [
   {
     emoji: '👜',
     title: 'Sacs & tote bags',
@@ -74,6 +101,21 @@ export const supportsItems = [
   },
 ]
 
+// ─── Coloris disponibles ──────────────────────────────────────────────────────
+export const availableColors = [
+  { name: 'Blanc',      hex: '#FFFFFF', light: true  },
+  { name: 'Ecru',       hex: '#F5ECD7', light: true  },
+  { name: 'Ficelle',    hex: '#C8B87A', light: true  },
+  { name: 'Gris perle', hex: '#D0CCC7', light: true  },
+  { name: 'Ciel',       hex: '#87CEEB', light: true  },
+  { name: 'Corail',     hex: '#F07C6C', light: false },
+  { name: 'Safran',     hex: '#E8970A', light: false },
+  { name: 'Taupe',      hex: '#A08C80', light: false },
+  { name: 'Anthracite', hex: '#454545', light: false },
+  { name: 'Marine',     hex: '#1B2A6B', light: false },
+  { name: 'Noir',       hex: '#1A1A1A', light: false },
+]
+
 // ─── Activites ────────────────────────────────────────────────────────────────
 export const activitesItems = [
   {
@@ -101,11 +143,31 @@ export const activitesItems = [
     title: 'Personnalisation textile',
     desc: "Apportez votre propre tissu ou choisissez parmi notre selection. Nous brodons selon votre motif, votre police, vos couleurs de fil.",
   },
+  {
+    icon: 'Layers',
+    title: 'Sublimation',
+    desc: "Impression haute definition sur polyester et textiles mixtes. Couleurs eclatantes, rendu photographique, ideal pour les logos et visuels complexes.",
+    featured: true,
+  },
 ]
 
-// ─── Photos galerie ───────────────────────────────────────────────────────────
+// ─── Photos galerie broderie ──────────────────────────────────────────────────
 export const photos = [
+  '20200711_185956.jpg',
+  '20200731_191747.jpg',
+  '20201214_122343.jpg',
+  '20201219_103726.jpg',
+  '20210219_121350.jpg',
+  '20210306_220534.jpg',
+  '20210306_220609.jpg',
+  '20220601_165840.jpg',
   'brod%20mylene.jpg',
+  'FB_IMG_1614553707049.jpg',
+  'FB_IMG_1644954966089.jpg',
+  'FB_IMG_1644955005475.jpg',
+  'FB_IMG_1644955260349.jpg',
+  'FB_IMG_1644955268544.jpg',
+  'FB_IMG_1644955278170.jpg',
   'FB_IMG_1644955288066(1).jpg',
   'FB_IMG_1644955288066.jpg',
   'FB_IMG_1644955297491.jpg',
@@ -131,13 +193,8 @@ export const photos = [
   'IMG_20220505_111338(1).jpg',
   'IMG_20220505_111338(2).jpg',
   'IMG_20220505_111338.jpg',
+  'IMG_20221111_120117(1).jpg',
   'IMG_20231001_170744.jpg',
-  'IMG_20231004_135611.jpg',
-  'IMG_20231004_135631.jpg',
-  'IMG_20231004_135644.jpg',
-  'IMG_20231004_135700.jpg',
-  'IMG_20231004_135827.jpg',
-  'IMG-20151018-WA0001.jpg',
   'IMG-20151018-WA0006.jpg',
   'IMG-20151018-WA0007.jpg',
   'IMG-20151018-WA0008.jpg',
@@ -153,7 +210,16 @@ export const photos = [
   'IMG-20220215-WA0005.jpg',
   'IMG-20220215-WA0012.jpg',
   'IMG-20220215-WA0014.jpg',
-  'logo%20cadeaux%20douceurs%20(1).jpg',
+]
+
+// ─── Photos sublimation ───────────────────────────────────────────────────────
+// Ajoutez ici les noms de fichiers places dans public/photo/sublimation/
+export const photosSublimation = [
+  'IMG_20231004_135611.jpg',
+  'IMG_20231004_135631.jpg',
+  'IMG_20231004_135644.jpg',
+  'IMG_20231004_135700.jpg',
+  'IMG_20231004_135827.jpg',
 ]
 
 // ─── FAQ ──────────────────────────────────────────────────────────────────────
