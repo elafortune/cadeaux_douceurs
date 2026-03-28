@@ -50,10 +50,14 @@ function FaqItem({ item, isOpen, onToggle, delay }) {
 }
 
 export default function Faq() {
-  const [openIndex, setOpenIndex] = useState(null)
+  const [openSet, setOpenSet] = useState(new Set())
   const headRef = useScrollReveal()
 
-  const toggle = (i) => setOpenIndex((prev) => (prev === i ? null : i))
+  const toggle = (i) => setOpenSet((prev) => {
+    const next = new Set(prev)
+    next.has(i) ? next.delete(i) : next.add(i)
+    return next
+  })
 
   return (
     <section id="faq" className="py-24 bg-ivory">
@@ -71,7 +75,7 @@ export default function Faq() {
             <FaqItem
               key={i}
               item={item}
-              isOpen={openIndex === i}
+              isOpen={openSet.has(i)}
               onToggle={() => toggle(i)}
               delay={(i % 5) + 1}
             />
