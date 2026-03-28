@@ -7,9 +7,9 @@ import { faqItems } from '../../data/siteData'
 function FaqItem({ item, isOpen, onToggle, delay }) {
   const ref = useScrollReveal()
   return (
+    <div ref={ref} className={`reveal reveal-delay-${delay}`}>
     <div
-      ref={ref}
-      className={`reveal reveal-delay-${delay} border rounded-2xl overflow-hidden transition-[box-shadow,border-color] duration-300 ${
+      className={`border rounded-2xl overflow-hidden transition-[box-shadow,border-color] duration-300 ${
         isOpen
           ? 'border-sky-light shadow-md bg-white'
           : 'border-sky-xlight/60 bg-white shadow-sm'
@@ -45,6 +45,7 @@ function FaqItem({ item, isOpen, onToggle, delay }) {
           {item.answer}
         </p>
       </div>
+    </div>
     </div>
   )
 }
