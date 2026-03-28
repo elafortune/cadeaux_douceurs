@@ -1,7 +1,13 @@
+import { useMemo } from 'react'
 import { Pen, PartyPopper, Building2, Gift, Paintbrush, Layers } from 'lucide-react'
 import useScrollReveal from '../../hooks/useScrollReveal'
 import SectionHeading from '../ui/SectionHeading'
-import { activitesItems } from '../../data/siteData'
+import { activitesItems, photos as allPhotos } from '../../data/siteData'
+
+function pickRandom(arr, n) {
+  const shuffled = [...arr].sort(() => Math.random() - 0.5)
+  return shuffled.slice(0, n).map((f) => `/photo/broderie/${f}`)
+}
 
 const iconMap = { Pen, PartyPopper, Building2, Gift, Paintbrush, Layers }
 
@@ -35,6 +41,7 @@ function ActiviteCard({ item, index, delay }) {
 }
 
 export default function Activites() {
+  const randomPhotos = useMemo(() => pickRandom(allPhotos, 5), [])
   const headRef = useScrollReveal()
 
   return (
@@ -56,13 +63,7 @@ export default function Activites() {
 
         {/* Petites photos */}
         <div className="flex flex-wrap justify-center gap-4 mt-12">
-          {[
-            '/photo/broderie/IMG_20231004_135611.jpg',
-            '/photo/broderie/IMG_20231004_135631.jpg',
-            '/photo/broderie/IMG_20231004_135644.jpg',
-            '/photo/broderie/IMG_20231004_135700.jpg',
-            '/photo/broderie/IMG_20231004_135827.jpg',
-          ].map((src, i) => (
+          {randomPhotos.map((src, i) => (
             <div
               key={i}
               className="w-28 h-28 rounded-2xl overflow-hidden border-2 border-sky-xlight shadow-md flex-shrink-0 transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg"
