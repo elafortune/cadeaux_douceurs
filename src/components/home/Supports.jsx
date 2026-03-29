@@ -1,6 +1,12 @@
+import { useMemo } from 'react'
 import useScrollReveal from '../../hooks/useScrollReveal'
 import SectionHeading from '../ui/SectionHeading'
-import { featuredTextiles, supportsItems, availableColors } from '../../data/siteData'
+import { featuredTextiles, supportsItems, availableColors, photos as allPhotos } from '../../data/siteData'
+
+function pickDistinct(arr, n) {
+  const shuffled = [...arr].sort(() => Math.random() - 0.5)
+  return shuffled.slice(0, n).map((f) => `/photo/broderie/${f}`)
+}
 
 /* ── Carte textile avec tailles ─────────────────────────── */
 function TextileCard({ item, delay }) {
@@ -48,15 +54,15 @@ function TextileCard({ item, delay }) {
 }
 
 /* ── Carte support simple ────────────────────────────────── */
-function SupportCard({ item, delay }) {
+function SupportCard({ item, image, delay }) {
   const ref = useScrollReveal()
   return (
     <div
       ref={ref}
       className={`reveal reveal-delay-${delay} group bg-white rounded-2xl p-5 text-center border border-rose-light/30 shadow-sm card-hover cursor-default`}
     >
-      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-sky-xlight to-rose-xlight flex items-center justify-center mx-auto mb-3 text-2xl transition-all duration-300 group-hover:from-sky group-hover:to-rose group-hover:scale-110">
-        {item.emoji}
+      <div className="w-14 h-14 rounded-full overflow-hidden mx-auto mb-3 border-2 border-sky-xlight shadow-sm transition-transform duration-300 group-hover:scale-110 group-hover:shadow-md">
+        <img src={image} alt={item.title} className="w-full h-full object-cover" />
       </div>
       <h3 className="font-serif text-base text-charcoal mb-1">{item.title}</h3>
       <p className="font-sans text-xs text-stone leading-relaxed">{item.desc}</p>
@@ -114,6 +120,7 @@ function ColorPalette() {
 
 /* ── Section principale ──────────────────────────────────── */
 export default function Supports() {
+  const supportPhotos = useMemo(() => pickDistinct(allPhotos, supportsItems.length), [])
   const headRef = useScrollReveal()
   const bannerRef = useScrollReveal()
 
@@ -136,7 +143,7 @@ export default function Supports() {
           className="reveal mb-10 rounded-2xl p-5 md:p-6 flex flex-col sm:flex-row items-center gap-4 text-white"
           style={{ background: 'linear-gradient(135deg, #3A7CA5 0%, #E8799B 100%)' }}
         >
-          <div className="text-4xl flex-shrink-0">🧵</div>
+          <div className="text-4xl flex-shrink-0">🪡</div>
           <div>
             <p className="font-serif text-lg font-semibold leading-snug">
               Broderie sur <span className="italic">tout support tissu</span>
@@ -161,7 +168,7 @@ export default function Supports() {
         </p>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
           {supportsItems.map((item, i) => (
-            <SupportCard key={item.title} item={item} delay={(i % 6) + 1} />
+            <SupportCard key={item.title} item={item} image={supportPhotos[i]} delay={(i % 6) + 1} />
           ))}
         </div>
 

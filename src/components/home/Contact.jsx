@@ -9,7 +9,7 @@ const contactCards = [
     href:    socialLinks.phone,
     icon:    Phone,
     label:   'Appelez-nous',
-    sub:     'Reponse rapide',
+    sub:     '+33 6 63 96 06 15',
     bg:      'from-emerald-400/20 to-emerald-500/20',
     iconBg:  'bg-emerald-400/25',
     hoverBg: 'hover:bg-emerald-400/10',
