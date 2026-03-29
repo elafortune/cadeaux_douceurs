@@ -29,7 +29,7 @@ const contactCards = [
     href:    socialLinks.instagram,
     icon:    Instagram,
     label:   'Instagram',
-    sub:     'Envoyez-nous un message',
+    sub:     '@cadeaux_douceurs34',
     bg:      'from-rose/20 to-rose-dark/20',
     iconBg:  'bg-rose/25',
     hoverBg: 'hover:bg-rose/10',
