@@ -80,7 +80,7 @@ export const supportsItems = [
     desc: 'T-shirts, polos, vestes, blouses, uniformes... Tous vos vetements.',
   },
   {
-    image: '/photo/broderie/20200711_185956.jpg',
+    image: '/photo/broderie/20210306_220534.jpg',
     title: 'Linge de maison',
     desc: "Draps, taies d'oreiller, nappes, torchons... Le linge du quotidien sublime.",
   },
@@ -95,7 +95,7 @@ export const supportsItems = [
     desc: 'Bodies, pyjamas, bavoirs, doudous... Des creations douces pour les tout-petits.',
   },
   {
-    image: '/photo/broderie/20201219_103726.jpg',
+    image: '/photo/broderie/FB_IMG_1644956932272.jpg',
     title: 'Accessoires',
     desc: 'Casquettes, bonnets, echarpes, pochettes... La touche finale.',
   },
