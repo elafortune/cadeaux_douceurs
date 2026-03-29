@@ -9,7 +9,7 @@ function pickDistinct(arr, n) {
 }
 
 /* ── Carte textile avec tailles ─────────────────────────── */
-function TextileCard({ item, delay }) {
+function TextileCard({ item, image, delay }) {
   const ref = useScrollReveal()
   return (
     <div
@@ -20,8 +20,8 @@ function TextileCard({ item, delay }) {
       <div className="h-1 w-10 rounded-full bg-gradient-to-r from-sky to-rose mb-5 line-draw" />
 
       <div className="flex items-start gap-4 mb-4">
-        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-xlight to-rose-xlight flex items-center justify-center text-2xl flex-shrink-0">
-          {item.emoji}
+        <div className="w-12 h-12 rounded-xl overflow-hidden border border-sky-xlight shadow-sm flex-shrink-0">
+          <img src={image} alt={item.title} className="w-full h-full object-cover" />
         </div>
         <div>
           <h3 className="font-serif text-lg text-charcoal leading-snug">{item.title}</h3>
@@ -120,7 +120,9 @@ function ColorPalette() {
 
 /* ── Section principale ──────────────────────────────────── */
 export default function Supports() {
-  const supportPhotos = useMemo(() => pickDistinct(allPhotos, supportsItems.length), [])
+  const allRandomPhotos = useMemo(() => pickDistinct(allPhotos, supportsItems.length + featuredTextiles.length), [])
+  const textilePhotos = allRandomPhotos.slice(0, featuredTextiles.length)
+  const supportPhotos = allRandomPhotos.slice(featuredTextiles.length)
   const headRef = useScrollReveal()
   const bannerRef = useScrollReveal()
 
@@ -158,7 +160,7 @@ export default function Supports() {
         {/* Cartes textiles avec tailles (serviettes + peignoirs) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
           {featuredTextiles.map((item, i) => (
-            <TextileCard key={item.title} item={item} delay={i + 1} />
+            <TextileCard key={item.title} item={item} image={textilePhotos[i]} delay={i + 1} />
           ))}
         </div>
 

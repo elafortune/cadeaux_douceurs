@@ -1,4 +1,4 @@
-import { Phone, Instagram } from 'lucide-react'
+import { Phone, Instagram, Mail } from 'lucide-react'
 import useScrollReveal from '../../hooks/useScrollReveal'
 import SectionHeading from '../ui/SectionHeading'
 import TikTokIcon from '../ui/TikTokIcon'
@@ -13,6 +13,16 @@ const contactCards = [
     bg:      'from-emerald-400/20 to-emerald-500/20',
     iconBg:  'bg-emerald-400/25',
     hoverBg: 'hover:bg-emerald-400/10',
+    target:  '_self',
+  },
+  {
+    href:    'mailto:rosarita.lafortune@gmail.com',
+    icon:    Mail,
+    label:   'Email',
+    sub:     'rosarita.lafortune@gmail.com',
+    bg:      'from-violet-400/20 to-violet-500/20',
+    iconBg:  'bg-violet-400/25',
+    hoverBg: 'hover:bg-violet-400/10',
     target:  '_self',
   },
   {
