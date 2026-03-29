@@ -1,12 +1,6 @@
-import { useMemo } from 'react'
 import useScrollReveal from '../../hooks/useScrollReveal'
 import SectionHeading from '../ui/SectionHeading'
-import { featuredTextiles, supportsItems, availableColors, photos as allPhotos } from '../../data/siteData'
-
-function pickDistinct(arr, n) {
-  const shuffled = [...arr].sort(() => Math.random() - 0.5)
-  return shuffled.slice(0, n).map((f) => `/photo/broderie/${f}`)
-}
+import { featuredTextiles, supportsItems, availableColors } from '../../data/siteData'
 
 /* ── Carte textile avec tailles ─────────────────────────── */
 function TextileCard({ item, image, delay }) {
@@ -120,9 +114,6 @@ function ColorPalette() {
 
 /* ── Section principale ──────────────────────────────────── */
 export default function Supports() {
-  const allRandomPhotos = useMemo(() => pickDistinct(allPhotos, supportsItems.length + featuredTextiles.length), [])
-  const textilePhotos = allRandomPhotos.slice(0, featuredTextiles.length)
-  const supportPhotos = allRandomPhotos.slice(featuredTextiles.length)
   const headRef = useScrollReveal()
   const bannerRef = useScrollReveal()
 
@@ -160,7 +151,7 @@ export default function Supports() {
         {/* Cartes textiles avec tailles (serviettes + peignoirs) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
           {featuredTextiles.map((item, i) => (
-            <TextileCard key={item.title} item={item} image={textilePhotos[i]} delay={i + 1} />
+            <TextileCard key={item.title} item={item} image={item.image} delay={i + 1} />
           ))}
         </div>
 
@@ -170,7 +161,7 @@ export default function Supports() {
         </p>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
           {supportsItems.map((item, i) => (
-            <SupportCard key={item.title} item={item} image={supportPhotos[i]} delay={(i % 6) + 1} />
+            <SupportCard key={item.title} item={item} image={item.image} delay={(i % 6) + 1} />
           ))}
         </div>
 

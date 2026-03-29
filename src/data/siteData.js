@@ -33,7 +33,7 @@ export const presentationItems = [
 // ─── Textiles avec tailles (serviettes + peignoirs) ──────────────────────────
 export const featuredTextiles = [
   {
-    emoji: '🛁',
+    image: '/photo/broderie/brod%20mylene.jpg',
     title: 'Serviettes & draps de bain',
     desc: 'De la serviette invitee au grand drap de bain — tous brodables a votre image.',
     sizes: [
@@ -44,7 +44,7 @@ export const featuredTextiles = [
     ],
   },
   {
-    emoji: '🧖',
+    image: '/photo/broderie/IMG-20220215-WA0012.jpg',
     title: 'Peignoirs adultes',
     desc: 'Peignoirs de bain luxueux brodes de votre prenom, initiales ou logo.',
     sizes: [
@@ -56,7 +56,7 @@ export const featuredTextiles = [
     ],
   },
   {
-    emoji: '🧒',
+    image: '/photo/broderie/IMG_20221111_120117(1).jpg',
     title: 'Peignoirs enfants',
     desc: 'Des peignoirs doux et personnalises pour les tout-petits jusqu\'aux ados.',
     sizes: [
@@ -70,32 +70,32 @@ export const featuredTextiles = [
 // ─── Autres supports textiles ─────────────────────────────────────────────────
 export const supportsItems = [
   {
-    emoji: '👜',
+    image: '/photo/broderie/20201219_103726.jpg',
     title: 'Sacs & tote bags',
     desc: 'Sacs en tissu personnalises : cadeaux utiles et originaux.',
   },
   {
-    emoji: '👕',
+    image: '/photo/broderie/IMG_20231001_170744.jpg',
     title: 'Vetements',
     desc: 'T-shirts, polos, vestes, blouses, uniformes... Tous vos vetements.',
   },
   {
-    emoji: '🛏️',
+    image: '/photo/broderie/20200711_185956.jpg',
     title: 'Linge de maison',
     desc: "Draps, taies d'oreiller, nappes, torchons... Le linge du quotidien sublime.",
   },
   {
-    emoji: '🎁',
+    image: '/photo/broderie/FB_IMG_1644956201150.jpg',
     title: 'Cadeaux personnalises',
     desc: 'Trousseau de naissance, cadeau de mariage, anniversaire... Idees uniques.',
   },
   {
-    emoji: '👶',
+    image: '/photo/broderie/IMG-20220215-WA0014.jpg',
     title: 'Layette & bebe',
     desc: 'Bodies, pyjamas, bavoirs, doudous... Des creations douces pour les tout-petits.',
   },
   {
-    emoji: '🧢',
+    image: '/photo/broderie/20201219_103726.jpg',
     title: 'Accessoires',
     desc: 'Casquettes, bonnets, echarpes, pochettes... La touche finale.',
   },
