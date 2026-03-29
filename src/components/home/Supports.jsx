@@ -1,6 +1,7 @@
 import useScrollReveal from '../../hooks/useScrollReveal'
 import SectionHeading from '../ui/SectionHeading'
 import { featuredTextiles, supportsItems, availableColors } from '../../data/siteData'
+import EmbroideryMachineIcon from '../ui/EmbroideryMachineIcon'
 
 /* ── Carte textile avec tailles ─────────────────────────── */
 function TextileCard({ item, image, delay }) {
@@ -136,7 +137,9 @@ export default function Supports() {
           className="reveal mb-10 rounded-2xl p-5 md:p-6 flex flex-col sm:flex-row items-center gap-4 text-white"
           style={{ background: 'linear-gradient(135deg, #3A7CA5 0%, #E8799B 100%)' }}
         >
-          <div className="text-4xl flex-shrink-0">🪡</div>
+          <div className="flex-shrink-0 text-white/90">
+            <EmbroideryMachineIcon size={48} />
+          </div>
           <div>
             <p className="font-serif text-lg font-semibold leading-snug">
               Broderie sur <span className="italic">tout support tissu</span>
