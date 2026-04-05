@@ -152,6 +152,7 @@ export const activitesItems = [
 ]
 
 // ─── Photos galerie broderie ──────────────────────────────────────────────────
+// Fichiers présents dans public/photo/broderie/
 export const photos = [
   '20200711_185956.jpg',
   '20200731_191747.jpg',
